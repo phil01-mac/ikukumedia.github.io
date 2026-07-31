@@ -16,56 +16,45 @@
     </style>
 </head>
 <body class="bg-zinc-950 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors">
-
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="IkukuMedia.jpeg" alt="IkukuMedia.jpeg" class="h-10 w-auto">
+                <img src="logo.jpeg" alt="Ikúkú" class="h-9 w-auto">
                 <div>
-                    <span class="heading-font text-3xl tracking-tighter font-bold">Ikúkú</span>
-                    <span class="text-xs tracking-[3px] text-zinc-500 dark:text-zinc-400 block -mt-1">MEDIA</span>
+                    <span class="heading-font text-2xl font-bold">Ikúkú</span>
                 </div>
             </div>
             
-            <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
-                <a href="#home" class="hover:text-red-600 dark:hover:text-red-500">Home</a>
-                <a href="#about" class="hover:text-red-600 dark:hover:text-red-500">About</a>
-                <a href="#projects" class="hover:text-red-600 dark:hover:text-red-500">Projects</a>
-                <a href="#services" class="hover:text-red-600 dark:hover:text-red-500">Services</a>
-                <a href="#contact" class="hover:text-red-600 dark:hover:text-red-500">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center text-xl rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800">
-                    <i id="theme-icon" class="fa-solid fa-moon"></i>
-                </button>
-                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-xl">
-                    LET'S COLLABORATE
-                </button>
-            </div>
+            <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                    class="text-sm bg-red-600 text-white px-5 py-2.5 rounded-xl font-medium">
+                COLLABORATE
+            </button>
         </div>
     </nav>
 
-    <!-- HERO with  Logo Overlay -->
-    <section id="home" class="hero-bg h-screen flex items-center relative" 
-             style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('IMG_6644.jpg');">
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <h1 class="heading-font text-7xl md:text-8xl font-bold leading-none text-white mb-6">
+    <!-- HERO - Mobile Optimized -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('hero.jpg');">
+        
+        <div class="max-w-5xl mx-auto px-5 text-center pt-20">
+            <h1 class="heading-font text-5xl md:text-7xl font-bold leading-tight text-white mb-6">
                 STORIES THAT<br><span class="text-red-500">BREATHE</span>
             </h1>
-            <p class="max-w-md mx-auto text-lg text-white/90 mb-12">
-                Capturing the spirit of African storytelling through bold cinema.
+            
+            <p class="text-white/90 text-base md:text-lg max-w-md mx-auto mb-10">
+                Nigerian film production house telling powerful African stories.
             </p>
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#projects" class="px-10 py-4 bg-white text-black font-medium rounded-2xl hover:bg-red-600 hover:text-white">VIEW OUR WORK</a>
+                <a href="#projects" class="px-8 py-4 bg-red-600 text-white font-medium rounded-2xl text-lg">Explore Projects</a>
+                <a href="#about" class="px-8 py-4 border border-white/50 text-white font-medium rounded-2xl text-lg">About Us</a>
             </div>
         </div>
-    </section>
-    <!-- Logo Overlay -->
-        <div class="absolute bottom-8 right-8 bg-black/70 p-4 rounded-xl hidden lg:block">
-            <img src="IkukuMedia.jpeg" alt="Ikúkú Media" class="h-16 w-auto opacity-90">
+
+        <!-- Logo Overlay -->
+        <div class="absolute bottom-8 right-6 bg-black/70 backdrop-blur p-4 rounded-2xl hidden md:flex items-center gap-3">
+            <img src="logo.jpeg" alt="Logo" class="h-12 w-auto">
         </div>
     </section>
      <!-- ABOUT -->
