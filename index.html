@@ -7,102 +7,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Playfair Display', sans-serif; }
+        body { font-family: system-ui, sans-serif; }
+        .heading-font { font-family: Georgia, 'Times New Roman', serif; }
         .hero-bg { background-size: cover; background-position: center; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-content { max-width: 720px; max-height: 90vh; overflow-y: auto; }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            z-index: 1000; 
+            align-items: center; 
+            justify-content: center; 
+        }
     </style>
 </head>
 <body class="bg-zinc-950 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors">
-<!-- NAVBAR -->
+
+    <!-- NAVBAR -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="IkukuMedia.jpeg" alt="Ikúkú" class="h-9 w-auto">
+                <img src="IkukuMedia.jpeg" alt="Ikúkú Logo" class="h-9 w-auto">
                 <div>
                     <span class="heading-font text-2xl font-bold">Ikúkú</span>
+                    <span class="text-xs tracking-widest text-zinc-500 dark:text-zinc-400 block -mt-1">MEDIA</span>
                 </div>
             </div>
             
-            <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                    class="text-sm bg-red-600 text-white px-5 py-2.5 rounded-xl font-medium">
-                COLLABORATE
-            </button>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                    <i id="theme-icon" class="fa-solid fa-moon text-xl"></i>
+                </button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                        class="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-2xl text-sm font-medium">
+                    COLLABORATE
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO - Mobile Optimized -->
+    <!-- HERO -->
     <section id="home" class="hero-bg min-h-screen flex items-center relative" 
-             style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('IMG_6644.jpg');">
+             style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)), url('IMG_6644.jpg');">
         
         <div class="max-w-5xl mx-auto px-5 text-center pt-20">
-            <h1 class="heading-font text-5xl md:text-7xl font-bold leading-tight text-white mb-6">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 mb-8">
+                <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                <span class="uppercase text-xs tracking-[3px] font-medium text-white">Ikúkú Media</span>
+            </div>
+            
+            <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-white mb-6">
                 STORIES THAT<br><span class="text-red-500">BREATHE</span>
             </h1>
             
-            <p class="text-white/90 text-base md:text-lg max-w-md mx-auto mb-10">
-                Nigerian film production house telling powerful African stories.
+            <p class="text-white/90 text-base sm:text-lg max-w-md mx-auto mb-10">
+                A Nigerian film production house dedicated to authentic African storytelling.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#projects" class="px-8 py-4 bg-red-600 text-white font-medium rounded-2xl text-lg">Explore Projects</a>
-                <a href="#about" class="px-8 py-4 border border-white/50 text-white font-medium rounded-2xl text-lg">About Us</a>
+                <a href="#projects" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-2xl text-lg">Explore Our Work</a>
             </div>
         </div>
 
         <!-- Logo Overlay -->
-        <div class="absolute bottom-8 right-6 bg-black/70 backdrop-blur p-4 rounded-2xl hidden md:flex items-center gap-3">
-            <img src="IkukuMedia.jpeg" alt="Logo" class="h-12 w-auto">
-        </div>
-    </section>
-     <!-- ABOUT -->
-    <section id="about" class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="uppercase text-red-500 text-sm tracking-[3px]">Chapter I — Origin</span>
-                <h2 class="heading-font text-5xl font-semibold mt-3 mb-8 leading-tight">
-                    Ikúkú — The Wind That Carries Stories
-                </h2>
-                <div class="prose prose-invert text-zinc-300">
-                    <p class="text-lg">
-                        Founded in Nigeria, Ikúkú Media is an independent film production house dedicated to 
-                        telling authentic African stories that resonate globally. "Ikúkú" (Igbo) means wind — 
-                        invisible yet powerful, carrying voices across borders and generations.
-                    </p>
-                    <p class="text-lg mt-6">
-                        We believe cinema is more than entertainment. It's a vessel for culture, identity, 
-                        memory, and social change. From gritty Nollywood dramas to international co-productions, 
-                        our work honors the complexity and beauty of the African experience.
-                    </p>
-                </div>
-                
-                <div class="flex gap-8 mt-12">
-                    <div>
-                        <div class="text-4xl font-semibold text-red-500">12+</div>
-                        <div class="text-sm uppercase tracking-widest">Films Produced</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-semibold text-red-500">8</div>
-                        <div class="text-sm uppercase tracking-widest">Countries Reached</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-semibold text-red-500">2024</div>
-                        <div class="text-sm uppercase tracking-widest">Est.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="relative">
-                <img src="https://picsum.photos/id/1016/800/900" alt="Filmmaking in Nigeria" 
-                     class="rounded-2xl shadow-2xl">
-                <div class="absolute -bottom-6 -left-6 bg-zinc-800 p-6 rounded-2xl border border-red-900/30 max-w-[240px]">
-                    <i class="fa-solid fa-quote-left text-4xl text-red-500/30 mb-4"></i>
-                    <p class="italic">"The wind does not choose where it blows. Neither do great stories."</p>
-                    <p class="text-xs mt-6 text-zinc-400">— Founder &amp; Creative Director</p>
-                </div>
-            </div>
+        <div class="absolute bottom-8 right-6 bg-black/70 backdrop-blur-lg p-4 rounded-3xl border border-white/10 hidden md:flex items-center gap-4">
+            <img src="IkukuMedia.jpeg" alt="Ikúkú Media" class="h-12 w-auto">
         </div>
     </section>
 
@@ -114,7 +84,7 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Project 1 -->
                 <div onclick="showModal(1)" class="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                    <img src="IMG_6513.jpg" alt="Echoes of the Harmattan" class="w-full h-64 object-cover">
+                    <img src="IMG_6513.jpg" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold">Echoes of the Harmattan</h3>
                         <p class="text-red-600 dark:text-red-400 text-sm">Drama • 18+</p>
@@ -123,7 +93,7 @@
 
                 <!-- Project 2 -->
                 <div onclick="showModal(2)" class="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                    <img src="IMG_6511.jpg" alt="Weavers of Lagos" class="w-full h-64 object-cover">
+                    <img src="IMG_6511.jpg" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold">Weavers of Lagos</h3>
                         <p class="text-red-600 dark:text-red-400 text-sm">Documentary</p>
@@ -132,7 +102,7 @@
 
                 <!-- Project 3 -->
                 <div onclick="showModal(3)" class="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                    <img src="IMG_6514.jpg" alt="Last Bus to Oshodi" class="w-full h-64 object-cover">
+                    <img src="IMG_6514.jpg" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold">Last Bus to Oshodi</h3>
                         <p class="text-red-600 dark:text-red-400 text-sm">Short Film</p>
@@ -142,17 +112,16 @@
         </div>
     </section>
 
-    <!-- MODALS -->
+    <!-- MODAL -->
     <div id="modal" class="modal">
-        <div class="modal-content bg-white dark:bg-zinc-900 rounded-3xl p-8 mx-4" id="modal-content">
-            <!-- Content will be injected by JavaScript -->
-        </div>
+        <div class="modal-content bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 mx-4 max-w-lg md:max-w-2xl" id="modal-content"></div>
     </div>
 
     <!-- FOOTER -->
     <footer id="contact" class="bg-zinc-900 py-16 text-white text-center">
-        <p class="text-2xl heading-font">Let's Tell Your Story</p>
-        <p class="mt-6 text-zinc-400">hello@ikukumedia.com • Lagos, Nigeria</p>
+        <p class="text-3xl heading-font mb-3">Ikúkú Media</p>
+        <p class="text-zinc-400">Lagos, Nigeria</p>
+        <p class="mt-6 text-sm">hello@ikukumedia.com</p>
     </footer>
 
     <script>
@@ -163,10 +132,12 @@
         function setTheme(dark) {
             if (dark) {
                 document.documentElement.classList.add('dark');
-                themeIcon.classList.add('fa-moon'); themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.classList.remove('fa-sun');
             } else {
                 document.documentElement.classList.remove('dark');
-                themeIcon.classList.add('fa-sun'); themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.classList.remove('fa-moon');
             }
             localStorage.setItem('theme', dark ? 'dark' : 'light');
         }
@@ -178,71 +149,46 @@
             const isDark = document.documentElement.classList.contains('dark');
             setTheme(!isDark);
         });
-        
-          // Modal Data
+
+        // Projects Modal Data
         const projects = {
             1: {
                 title: "Echoes of the Harmattan",
                 subtitle: "Drama • 18+ • 2025",
                 image: "IMG_6513.jpg",
-                content: `
-                    <p class="text-lg leading-relaxed">In the heart of Northern Nigeria, where the fierce Harmattan winds sweep across the land, a young musician returns home to confront the ghosts of his past.</p>
-                    <h3 class="font-semibold text-xl mt-6 mb-3">Synopsis</h3>
-                    <p>Sadiq, a rising Lagos-based artist, is forced to return to his ancestral village after his father's mysterious illness. As the dry Harmattan season begins, long-buried family secrets, generational trauma, and forbidden love rise to the surface.</p>
-                    <div class="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-2xl my-6"><p class="italic">"The wind does not forget... and neither do the ancestors."</p></div>
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div><strong>Director:</strong> Fatima Adebayo</div>
-                        <div><strong>Runtime:</strong> 118 mins</div>
-                        <div><strong>Language:</strong> Hausa, English</div>
-                        <div><strong>Rating:</strong> 18+ (Mature Themes)</div>
-                    </div>
-                `
+                content: `<p class="text-lg leading-relaxed mb-4">In the heart of Northern Nigeria, where the fierce Harmattan winds sweep across the land, a young musician returns home to confront the ghosts of his past and family secrets.</p>
+                          <h3 class="font-semibold text-xl mt-6 mb-3">Synopsis</h3>
+                          <p>Sadiq must face generational trauma, forbidden love, and the weight of silence as the dry season reveals long-buried truths.</p>`
             },
             2: {
                 title: "Weavers of Lagos",
                 subtitle: "Documentary • In Production",
                 image: "IMG_6511.jpg",
-                content: `
-                    <p class="text-lg">An intimate portrait of the women keeping traditional Nigerian textile arts alive amidst the rapid urbanization of Lagos.</p>
-                    <h3 class="font-semibold text-xl mt-6 mb-3">About the Film</h3>
-                    <p>This documentary follows three generations of weavers as they preserve ancestral techniques while navigating modern economic pressures and cultural shifts in one of Africa's largest cities.</p>
-                    <div class="grid grid-cols-2 gap-4 text-sm mt-6">
-                        <div><strong>Director:</strong> Aisha Okon</div>
-                        <div><strong>Runtime:</strong> 78 mins</div>
-                    </div>
-                `
+                content: `<p class="text-lg leading-relaxed">An intimate portrait of the women keeping traditional Nigerian textile arts alive amidst the rapid urbanization and modern pressures of Lagos.</p>`
             },
             3: {
                 title: "Last Bus to Oshodi",
                 subtitle: "Short Film • 18 min • 2024",
                 image: "IMG_6514.jpg",
-                content: `
-                    <p class="text-lg">One night. One yellow bus. Stories of survival, love, and broken dreams collide on the chaotic roads of Lagos.</p>
-                    <h3 class="font-semibold text-xl mt-6 mb-3">Synopsis</h3>
-                    <p>A slice-of-life drama that unfolds over one night ride from Victoria Island to Oshodi, capturing the raw humanity of everyday Lagosians.</p>
-                    <div class="text-sm mt-6"><strong>Festival Selection:</strong> Lagos International Film Festival 2024</div>
-                `
+                content: `<p class="text-lg leading-relaxed">One night. One yellow Lagos bus. Stories of survival, love, dreams, and struggle unfold as passengers travel from Victoria Island to Oshodi.</p>`
             }
         };
 
         function showModal(id) {
-            const project = projects[id];
-            const modalContent = document.getElementById('modal-content');
-            
-            modalContent.innerHTML = `
+            const p = projects[id];
+            const html = `
                 <div class="flex justify-between items-start mb-6">
                     <div>
-                        <h2 class="heading-font text-4xl font-bold">${project.title}</h2>
-                        <p class="text-red-600 dark:text-red-400">${project.subtitle}</p>
+                        <h2 class="heading-font text-3xl font-bold">${p.title}</h2>
+                        <p class="text-red-600 dark:text-red-400">${p.subtitle}</p>
                     </div>
                     <button onclick="closeModal()" class="text-4xl leading-none hover:text-red-600">&times;</button>
                 </div>
-                <img src="${project.image}" alt="${project.title}" class="w-full rounded-2xl mb-6">
-                <div class="prose dark:prose-invert">${project.content}</div>
-                <button onclick="closeModal()" class="mt-10 w-full py-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-2xl">
-                    CLOSE
-                </button>
+                <img src="${p.image}" class="w-full rounded-2xl mb-6 shadow-xl" alt="${p.title}">
+                <div class="prose dark:prose-invert">${p.content}</div>
+                <button onclick="closeModal()" class="mt-10 w-full py-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-2xl">Close</button>
             `;
+            document.getElementById('modal-content').innerHTML = html;
             document.getElementById('modal').style.display = 'flex';
         }
 
