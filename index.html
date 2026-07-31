@@ -40,7 +40,7 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="logo.jpeg" alt="Ikúkú Logo" class="h-9 w-auto">
+                <img src="IkukuMedia.jpeg" alt="Ikúkú Logo" class="h-9 w-auto">
                 <div>
                     <span class="heading-font text-2xl font-bold">Ikúkú</span>
                     <span class="text-xs tracking-widest text-zinc-500 dark:text-zinc-400 block -mt-1">MEDIA</span>
@@ -60,7 +60,7 @@
 
     <!-- HERO -->
     <section id="home" class="hero-bg min-h-screen flex items-center relative" 
-             style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)), url('hero.jpg');">
+             style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)), url('IMG_6644.jpg');">
         <div class="max-w-5xl mx-auto px-5 text-center pt-20">
             <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 mb-8">
                 <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
@@ -88,7 +88,7 @@
             
             <div class="grid md:grid-cols-3 gap-6">
                 <div onclick="showModal(1)" class="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                    <img src="project1.jpg" class="w-full h-56 object-cover">
+                    <img src="IMG_6513.jpg" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold">Echoes of the Harmattan</h3>
                         <p class="text-red-600 dark:text-red-400 text-sm">Drama • 18+</p>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div onclick="showModal(3)" class="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                    <img src="project3.jpg" class="w-full h-56 object-cover">
+                    <img src="IMG_6514.jpg" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold">Last Bus to Oshodi</h3>
                         <p class="text-red-600 dark:text-red-400 text-sm">Short Film</p>
@@ -127,6 +127,11 @@
     </footer>
 
     <script>
+         // Force scroll to top on load
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+        
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
@@ -151,13 +156,17 @@
             const isDark = document.documentElement.classList.contains('dark');
             setTheme(!isDark);
         });
+         // Go to top function
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         // Projects Data
         const projects = {
             1: {
                 title: "Echoes of the Harmattan",
                 subtitle: "Drama • 18+ • 2025",
-                image: "project1.jpg",
+                image: "IMG_6513.jpg",
                 content: `<p class="text-lg leading-relaxed">In the heart of Northern Nigeria, where the fierce Harmattan winds sweep across the land, a young musician returns home to confront the ghosts of his past.</p>
                           <h3 class="font-semibold text-xl mt-6 mb-3">Synopsis</h3>
                           <p>Sadiq must face generational trauma, forbidden love, and the weight of silence as the dry season reveals long-buried truths.</p>`
@@ -171,7 +180,7 @@
             3: {
                 title: "Last Bus to Oshodi",
                 subtitle: "Short Film • 18 min • 2024",
-                image: "project3.jpg",
+                image: "IMG_6514.jpg",
                 content: `<p class="text-lg">One night. One yellow Lagos bus. Stories of survival, love, and broken dreams unfold as passengers travel across the city.</p>`
             }
         };
